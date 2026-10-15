@@ -1,43 +1,53 @@
-# Rookit Collection — WordPress / WooCommerce Technical Assessment
+# Rookit Collection
 
-A lightweight custom WordPress theme built with PHP, semantic HTML, and responsive CSS. No page builders.
+A custom classic WordPress theme for a WooCommerce assessment. No page builder required.
 
 ## Requirements
-- WordPress: record the actual installed version here: **[version]**
-- PHP: 8.0 or later; tested version: **[version]**
-- MySQL/MariaDB
-- WooCommerce: record installed version: **[version]**
 
-## Setup
-1. Install WordPress on a local development environment and set site title to **Rookit Collection**.
-2. Copy `rookit-collection-theme` into `wp-content/themes/` or upload the ZIP under Appearance > Themes > Add New > Upload Theme.
+- WordPress (record the version you tested)
+- PHP 8+
+- MySQL/MariaDB
+- WooCommerce
+
+## Install
+
+1. Install WordPress and WooCommerce in LocalWP.
+2. Copy `rookit-collection-theme` into `wp-content/themes/` or upload the theme ZIP under Appearance > Themes > Add New.
 3. Activate **Rookit Collection**.
-4. Install and activate WooCommerce. Complete its setup wizard; set store country to South Africa and currency to ZAR.
-5. Check WooCommerce > Settings > Advanced to ensure Cart, Checkout and My Account pages are assigned (WooCommerce usually creates them).
-6. Enable customer registration at WooCommerce > Settings > Accounts & Privacy (enable account creation on the My Account page and during checkout, as needed).
-7. At WooCommerce > Settings > Payments, enable **Direct bank transfer** and configure test bank details. Do not publish personal banking credentials in Git.
-8. Add four simple products, each with name, description, price and image: T-Shirt R199, Hoodie R499, Cap R149, Mug R99.
-9. Mark at least three products as **Featured** in the Products admin list (star icon). The homepage displays the first three featured products.
-10. Test: product > add to cart > cart > checkout > register/login > place order with bank transfer > My Account > Orders.
-11. Optional: set Settings > Permalinks to Post name and create a primary navigation menu.
+4. In WooCommerce settings, select ZAR, configure customer accounts and enable Direct Bank Transfer for demonstration orders.
+5. Add and publish T-Shirt (R199), Hoodie (R499), Cap (R149), and Mug (R99). Mark three as featured.
+6. Verify WooCommerce Cart, Checkout, and My Account pages are correctly assigned.
+7. Test a full checkout with fictional customer information. Do not use real bank details in the demo.
+
+## Homepage images
+
+Place images directly inside `assets/img/` within the theme:
+
+```
+rookit-collection-theme/
+  assets/
+    css/
+      main.css
+    img/
+      hero.jpg
+      about.jpg
+```
+
+The homepage reads these filenames from `front-page.php`. If your files are named differently (for example `hero.webp`), change the two filenames at the top of `front-page.php` to match **exactly**, including extension and capitalization. If images are missing, the theme displays its original placeholders instead. Use images you own or have permission to use.
+
+Images inside the theme are not managed through WordPress Media Library. `get_template_directory_uri()` builds their URLs and `file_exists()` checks whether they exist.
 
 ## Custom PHP feature
-`functions.php` hooks into `woocommerce_single_product_summary` to display an estimated delivery note below the product price on single-product pages. The text is illustrative, not a shipping guarantee.
 
-## Assumptions
-- Demo store with sample products and images; no real payments are collected.
-- Bank transfer orders are created with WooCommerce's standard BACS workflow.
-- WooCommerce manages account registration, login, cart and checkout.
-- Contact email on homepage is placeholder and must be replaced.
+`functions.php` uses the `woocommerce_single_product_summary` hook to show an estimated delivery message on product pages.
 
-## Repository guidance
-Commit the custom theme, README and optional safe configuration/export files. Do not commit WordPress core, uploads, secrets, `wp-config.php`, or customer data.
+## GitHub submission
 
-## Admin access
-Provide temporary demo credentials privately to the reviewer only if requested. Never commit passwords to GitHub.
+Commit the custom theme and this README. Do not commit `wp-config.php`, passwords, database credentials, or customer information. Product data and WooCommerce settings are stored in the WordPress database, so provide an optional sanitized export or documented manual setup steps.
 
-## Suggested commits
-- `Create custom WordPress theme structure`
-- `Build responsive storefront homepage`
-- `Add WooCommerce integration and delivery note`
-- `Document installation and store configuration`
+## Assessment notes
+
+- WordPress version tested: **fill in**
+- PHP version tested: **fill in**
+- Assumptions: Local development with WooCommerce; Direct Bank Transfer is for demonstration only.
+- Admin access: share securely only if the reviewer requests it; never publish credentials in GitHub.
