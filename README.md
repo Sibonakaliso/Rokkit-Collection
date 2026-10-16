@@ -71,3 +71,9 @@ Sibonakaliso Njabulo Ngubane
 ## Repository
 
 https://github.com/Sibonakaliso/Rokkit-Collection
+
+
+## Local Website credentials
+
+- username: RkAdmin
+- password: RKpassword01#
