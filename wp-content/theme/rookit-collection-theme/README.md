@@ -4,7 +4,7 @@ A custom classic WordPress theme for a WooCommerce assessment. No page builder r
 
 ## Requirements
 
-- WordPress (record the version you tested)
+- WordPress v7.1.3
 - PHP 8+
 - MySQL/MariaDB
 - WooCommerce
@@ -47,7 +47,7 @@ Commit the custom theme and this README. Do not commit `wp-config.php`, password
 
 ## Assessment notes
 
-- WordPress version tested: **fill in**
-- PHP version tested: **fill in**
+- WordPress version tested: v7.1.3
+- PHP version tested: 8.2.29
 - Assumptions: Local development with WooCommerce; Direct Bank Transfer is for demonstration only.
 - Admin access: share securely only if the reviewer requests it; never publish credentials in GitHub.
