@@ -77,3 +77,7 @@ https://github.com/Sibonakaliso/Rokkit-Collection
 
 - username: RkAdmin
 - password: RKpassword01#
+
+## Local Website credentials
+
+- live demo: https://rokkit.liscofragrances.co.za/
