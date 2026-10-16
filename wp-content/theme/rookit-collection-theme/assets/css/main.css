@@ -347,3 +347,107 @@ h2 {
 .about-image {
     overflow: hidden;
 }
+
+/* Mobile navigation */
+.menu-toggle,
+.mobile-account-links {
+    display: none;
+}
+
+.menu-toggle {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fff;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle-line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--ink);
+}
+
+/* White Add to Cart text, including hover and visited states */
+.woocommerce ul.products li.product a.button,
+.woocommerce ul.products li.product a.button:visited,
+.woocommerce ul.products li.product a.button:hover,
+.woocommerce ul.products li.product a.button:focus,
+.woocommerce ul.products li.product a.added_to_cart {
+    color: #fff;
+}
+
+.woocommerce ul.products li.product a.button:hover,
+.woocommerce ul.products li.product a.button:focus {
+    background: #183523;
+}
+
+@media (max-width: 800px) {
+    .header-inner {
+        position: relative;
+        flex-wrap: nowrap;
+        min-height: 70px;
+        padding: 12px 0;
+        gap: 12px;
+    }
+
+    .brand {
+        font-size: 1.15rem;
+        line-height: 1.2;
+    }
+
+    .menu-toggle {
+        display: flex;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    .header-actions {
+        display: none;
+    }
+
+    .header-inner .site-navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        padding: 12px 16px 18px;
+        background: #fff;
+        border: 1px solid var(--line);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .header-inner .site-navigation.is-open {
+        display: block;
+    }
+
+    .site-navigation .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .site-navigation .nav-links a,
+    .mobile-account-links a {
+        display: block;
+        padding: 11px 0;
+        text-decoration: none;
+        font-size: 0.95rem;
+    }
+
+    .mobile-account-links {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid var(--line);
+        margin-top: 8px;
+        padding-top: 8px;
+    }
+}

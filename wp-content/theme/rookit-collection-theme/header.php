@@ -16,7 +16,19 @@
             Rookit Collection
         </a>
 
-        <nav aria-label="Main navigation">
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-controls="site-navigation"
+            aria-expanded="false"
+            aria-label="Open navigation menu"
+        >
+            <span class="menu-toggle-line"></span>
+            <span class="menu-toggle-line"></span>
+            <span class="menu-toggle-line"></span>
+        </button>
+
+        <nav id="site-navigation" class="site-navigation" aria-label="Main navigation">
             <?php if (has_nav_menu('primary')) : ?>
                 <?php
                 wp_nav_menu(array(
@@ -31,6 +43,15 @@
                     <li><a href="<?php echo esc_url(rookit_collection_shop_url()); ?>">Shop</a></li>
                     <li><a href="<?php echo esc_url(home_url('/#about')); ?>">About</a></li>
                 </ul>
+            <?php endif; ?>
+
+            <?php if (function_exists('wc_get_page_permalink')) : ?>
+                <div class="mobile-account-links">
+                    <a href="<?php echo esc_url(wc_get_page_permalink('myaccount')); ?>">My Account</a>
+                    <a href="<?php echo esc_url(wc_get_cart_url()); ?>">
+                        Cart (<?php echo esc_html(WC()->cart ? WC()->cart->get_cart_contents_count() : 0); ?>)
+                    </a>
+                </div>
             <?php endif; ?>
         </nav>
 

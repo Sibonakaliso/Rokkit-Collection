@@ -16,15 +16,26 @@ function rookit_collection_setup() {
 add_action('after_setup_theme', 'rookit_collection_setup');
 
 function rookit_collection_enqueue_styles() {
-    wp_enqueue_style('rookit-style', get_stylesheet_uri(), array(), '1.1.0');
+    wp_enqueue_style('rookit-style', get_stylesheet_uri(), array(), '1.2.0');
     wp_enqueue_style(
         'rookit-main',
         get_template_directory_uri() . '/assets/css/main.css',
         array('rookit-style'),
-        '1.1.0'
+        '1.2.0'
     );
 }
 add_action('wp_enqueue_scripts', 'rookit_collection_enqueue_styles');
+
+function rookit_collection_enqueue_scripts() {
+    wp_enqueue_script(
+        'rookit-navigation',
+        get_template_directory_uri() . '/assets/js/navigation.js',
+        array(),
+        '1.2.0',
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'rookit_collection_enqueue_scripts');
 
 /**
  * Display a short delivery estimate below the product price.
